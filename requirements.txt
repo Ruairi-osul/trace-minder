@@ -1,0 +1,10 @@
+pyarrow
+fastparquet
+pandas
+scikit-learn
+joblib
+scipy
+matplotlib
+tqdm
+binit
+git+https://github.com/Ruairi-osul/calcium-clear.git

@@ -1,0 +1,4 @@
+.venv
+.mypy*
+__pycache__
+*.egg*
