@@ -75,7 +75,7 @@ class GroupedAligner(BaseAligner):
     def align_long(
         self,
         df_traces: pd.DataFrame,
-        event_starts: np.ndarray,
+        event_starts: pd.DataFrame,
     ) -> pd.DataFrame:
         if self.copy:
             df_traces = df_traces.copy()
@@ -102,8 +102,8 @@ class GroupedAligner(BaseAligner):
     def average_trace(
         self,
         df_traces: pd.DataFrame,
-        event_starts: np.ndarray,
-    ):
+        event_starts: pd.DataFrame,
+    ) -> pd.DataFrame:
         """
         Creates an average trace
 
@@ -133,8 +133,8 @@ class GroupedAligner(BaseAligner):
     def average_trace_long(
         self,
         df_traces: pd.DataFrame,
-        event_starts: np.ndarray,
-    ):
+        event_starts: pd.DataFrame,
+    ) -> pd.DataFrame:
         """
         Creates an average trace
 
