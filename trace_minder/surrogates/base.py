@@ -1,5 +1,3 @@
-from calcium_clear.surrogates import rotate_traces
-from typing import Optional
 import pandas as pd
 
 
