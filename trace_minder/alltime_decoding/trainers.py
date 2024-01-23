@@ -6,6 +6,6 @@ class Trainer:
         self.scoring = scoring
         self.cv = cv
 
-    def __call__(self, model, X, y):
+    def __call__(self, model, X, y) -> float:
         scores = cross_val_score(model, X, y, scoring=self.scoring, cv=self.cv)
         return scores.mean()
