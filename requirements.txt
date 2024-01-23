@@ -7,4 +7,4 @@ scipy
 matplotlib
 tqdm
 binit
-git+https://github.com/Ruairi-osul/calcium-clear.git
+calcium-clear @ git+https://github.com/Ruairi-osul/calcium-clear.git
