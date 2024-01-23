@@ -21,6 +21,7 @@ class TracePreprocessor:
         time_col: str = "time",
         gaussian_sigma: Optional[float] = None,
         medfilt_kernel_size: Optional[int] = None,
+        drop_na: bool = True,
     ):
         self.max_time = max_time
         self.min_time = min_time
@@ -32,6 +33,10 @@ class TracePreprocessor:
         self.time_col = time_col
         self.gaussian_sigma = gaussian_sigma
         self.medfilt_kernel_size = medfilt_kernel_size
+        self.drop_na = drop_na
+
+    def dropna(self, df_traces: pd.DataFrame) -> pd.DataFrame:
+        return df_traces.dropna()
 
     def subset_max_time(self, df_traces: pd.DataFrame) -> pd.DataFrame:
         return df_traces[df_traces[self.time_col] <= self.max_time]
@@ -78,6 +83,8 @@ class TracePreprocessor:
         return df_traces
 
     def __call__(self, df_traces: pd.DataFrame) -> pd.DataFrame:
+        if self.drop_na:
+            df_traces = self.dropna(df_traces)
         if self.max_time is not None:
             df_traces = self.subset_max_time(df_traces)
         if self.min_time is not None:
